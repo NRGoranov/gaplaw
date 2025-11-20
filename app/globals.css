@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+  --color-background: #f2fbf8;
+  --color-background-light: #ffffff;
+  --color-background-warm: #e3f3ef;
+  --color-primary: #26a98b;
+  --color-primary-light: #4fc8aa;
+  --color-primary-dark: #0b595d;
+  --color-primary-hover: #1f8f74;
+  --color-primary-subtle: #d0f0e7;
+  --color-accent: #248b7a;
+  --color-accent-light: #52ae9e;
+  --color-accent-dark: #0f4d46;
+  --color-accent-subtle: #cff2ec;
+  --color-secondary: #0b595d;
+  --color-secondary-light: #257b7f;
+  --color-secondary-dark: #053437;
+  --color-text-primary: #102422;
+  --color-text-secondary: #1d4a44;
+  --color-text-muted: #4d6460;
+  --color-text-light: #f7fffd;
+  --color-surface: #ffffff;
+  --color-surface-elevated: #ecf7f5;
+  --color-surface-warm: #d9f0eb;
+  --color-success: #1f9f7b;
+  --color-warning: #d4963c;
+  --color-error: #ba4a4a;
+  --gradient-trust: linear-gradient(135deg, #26a98b, #0b595d);
+  --gradient-luxury: linear-gradient(120deg, #0b595d, #248b7a);
+  --gradient-soft: linear-gradient(135deg, #ecf7f5, #d9f0eb);
+  --gradient-breathe: linear-gradient(120deg, #a4e4d6, #effcf9);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-inter);
+  min-height: 100vh;
+}
+
+body::selection {
+  background: var(--color-primary);
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 0.4rem;
+  height: 0.4rem;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary);
+  border-radius: 999px;
+}
+
+@layer utilities {
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-dark focus-visible:ring-offset-2 focus-visible:ring-offset-surface;
+  }
+}
+
+.gradient-trust {
+  background-image: var(--gradient-trust);
+}
+
+.gradient-luxury {
+  background-image: var(--gradient-luxury);
+}
+
+.gradient-soft {
+  background-image: var(--gradient-soft);
+}
+
+.gradient-breathe {
+  background-image: var(--gradient-breathe);
+}
+
+.shadow-luxury {
+  box-shadow: 0 20px 45px -25px rgb(0 0 0 / 0.35);
+}
+
+.shadow-luxury-lg {
+  box-shadow: 0 30px 60px -35px rgb(0 0 0 / 0.45);
+}
+
+.hover-lift {
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px -30px rgb(0 0 0 / 0.6);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 3vw, 2.75rem);
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: clamp(1.35rem, 2vw, 2rem);
+}
+
+p {
+  line-height: 1.6;
+}
+
+.view-transition-fallback {
+  opacity: 0.98;
+  transition: opacity 250ms ease;
+}
