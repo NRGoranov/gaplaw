@@ -11,7 +11,7 @@ export default function ContactPage() {
   return (
     <div className="mx-auto max-w-6xl space-y-10 px-6">
       <section className="rounded-[2.5rem] bg-surface p-10 shadow-luxury">
-        <p className="text-sm uppercase tracking-wide text-text-secondary">Контакти</p>
+        <p className="text-sm uppercase tracking-wide text-accent-dark">Контакти</p>
         <h1>Свържете се с нас</h1>
         <p className="mt-4 max-w-3xl text-text-muted">{firm.meetingNoteBg}</p>
         <div className="mt-6 grid gap-6 md:grid-cols-3">

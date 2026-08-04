@@ -11,7 +11,7 @@ export default function Home() {
     <div className="mx-auto max-w-6xl space-y-20 px-6">
       <section className="gradient-soft relative overflow-hidden rounded-[2.5rem] px-6 pb-16 pt-20 shadow-luxury-lg md:px-12">
         <AnimatedSection className="space-y-8">
-          <p className="inline-flex items-center rounded-full bg-white/70 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-text-secondary shadow">
+          <p className="inline-flex items-center rounded-full bg-accent-subtle px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-accent-dark shadow">
             {firm.logoText}
           </p>
           <h1>{firm.nameBg}</h1>
@@ -40,7 +40,7 @@ export default function Home() {
       <section className="space-y-6">
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="text-sm uppercase tracking-wide text-text-secondary">Сфери на дейност</p>
+            <p className="text-sm uppercase tracking-wide text-accent-dark">Сфери на дейност</p>
             <h2>Правни услуги</h2>
             <p className="max-w-2xl text-text-muted">
               Предоставя услуги на местни и чуждестранни корпоративни организации и юридически лица с
@@ -62,7 +62,7 @@ export default function Home() {
 
       <section className="grid gap-10 md:grid-cols-2">
         <AnimatedSection className="rounded-3xl border border-white/10 bg-surface p-10 shadow-glow">
-          <p className="text-sm uppercase tracking-wide text-text-secondary">За нас</p>
+          <p className="text-sm uppercase tracking-wide text-accent-dark">За нас</p>
           <h2>За нас</h2>
           <p className="mt-4 text-text-muted">
             Адвокатско дружество Горанова и Христова-Аличкова е естествен резултат на многогодишно
@@ -77,7 +77,7 @@ export default function Home() {
           </Link>
         </AnimatedSection>
         <AnimatedSection className="rounded-3xl border border-white/10 bg-gradient-to-br from-primary/10 to-secondary/10 p-10 shadow-glow">
-          <p className="text-sm uppercase tracking-wide text-text-secondary">Контакти</p>
+          <p className="text-sm uppercase tracking-wide text-accent-dark">Контакти</p>
           <h2>Свържете се с нас</h2>
           <ul className="mt-6 space-y-3 text-text-muted">
             <li>
@@ -106,7 +106,7 @@ export default function Home() {
       <section className="space-y-6">
         <div className="flex items-end justify-between">
           <div>
-            <p className="text-sm uppercase tracking-wide text-text-secondary">Новини</p>
+            <p className="text-sm uppercase tracking-wide text-accent-dark">Новини</p>
             <h2>Новини</h2>
           </div>
           <Link href="/insights" className="text-sm font-semibold text-primary hover:text-primary-dark">

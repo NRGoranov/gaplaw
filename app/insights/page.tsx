@@ -14,7 +14,7 @@ export default function InsightsPage() {
   return (
     <div className="mx-auto max-w-6xl space-y-10 px-6">
       <section className="rounded-[2.5rem] bg-surface p-10 shadow-luxury">
-        <p className="text-sm uppercase tracking-wide text-text-secondary">Новини</p>
+        <p className="text-sm uppercase tracking-wide text-accent-dark">Новини</p>
         <h1>Новини</h1>
         <p className="mt-4 max-w-3xl text-text-muted">
           Новини на Адвокатско дружество Горанова и Христова-Аличкова.

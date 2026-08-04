@@ -10,7 +10,7 @@ export default function ServicesPage() {
   return (
     <div className="mx-auto max-w-6xl space-y-10 px-6">
       <section className="rounded-[2.5rem] bg-surface p-10 shadow-luxury">
-        <p className="text-sm uppercase tracking-wide text-text-secondary">Практики</p>
+        <p className="text-sm uppercase tracking-wide text-accent-dark">Практики</p>
         <h1>Сфери на дейност</h1>
         <p className="mt-4 max-w-3xl text-text-muted">
           Адвокатско дружество Горанова и Христова-Аличкова предоставя правни услуги на местни и

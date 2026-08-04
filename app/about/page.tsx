@@ -12,7 +12,7 @@ export default function AboutPage() {
   return (
     <div className="mx-auto max-w-6xl space-y-16 px-6">
       <section className="rounded-[2.5rem] bg-gradient-to-br from-primary/10 to-secondary/10 p-10 shadow-luxury">
-        <p className="text-sm uppercase tracking-wide text-text-secondary">За нас</p>
+        <p className="text-sm uppercase tracking-wide text-accent-dark">За нас</p>
         <h1>{firm.nameBg}</h1>
         <div className="mt-6 max-w-3xl space-y-4 text-lg text-text-muted">
           {homeIntroBg.map((paragraph) => (
@@ -23,7 +23,7 @@ export default function AboutPage() {
 
       <section className="space-y-8">
         <div>
-          <p className="text-sm uppercase tracking-wide text-text-secondary">Партньори</p>
+          <p className="text-sm uppercase tracking-wide text-accent-dark">Партньори</p>
           <h2>Учредители на адвокатското дружество</h2>
         </div>
         <div className="grid gap-8 lg:grid-cols-2">
@@ -34,6 +34,8 @@ export default function AboutPage() {
                 role={member.role}
                 email={member.email}
                 bio={member.bio}
+                imageUrl={member.imageUrl}
+                imageAlt={member.imageAlt}
               />
             </AnimatedSection>
           ))}
