@@ -1,35 +1,9 @@
 import type { Metadata } from 'next';
-
-const services = [
-  {
-    title: 'Корпоративно право',
-    details: [
-      'Структуриране на дружества, преобразувания и M&A',
-      'Корпоративно управление, бордова документация, ESG политики',
-      'Договори за дистрибуция, франчайз, стратегически партньорства',
-    ],
-  },
-  {
-    title: 'Нестопански организации',
-    details: [
-      'Учредяване и регистрация на фондации и сдружения',
-      'Съответствие с изискванията на донорите и държавните институции',
-      'Вътрешни правила, GDPR, управление на доброволци',
-    ],
-  },
-  {
-    title: 'Правни консултации',
-    details: [
-      'Оценка и управление на регулаторни рискове',
-      'Изготвяне и преговори по договори, правни становища',
-      'Представителство в административни производства и съдебни спорове',
-    ],
-  },
-];
+import { services } from '@/lib/content';
 
 export const metadata: Metadata = {
-  title: 'Услуги',
-  description: 'Подробен преглед на правните услуги, които предоставяме.',
+  title: 'Сфери на дейност',
+  description: 'Правни услуги на Адвокатско дружество Горанова и Христова-Аличкова.',
 };
 
 export default function ServicesPage() {
@@ -37,14 +11,14 @@ export default function ServicesPage() {
     <div className="mx-auto max-w-6xl space-y-10 px-6">
       <section className="rounded-[2.5rem] bg-surface p-10 shadow-luxury">
         <p className="text-sm uppercase tracking-wide text-text-secondary">Практики</p>
-        <h1>Правни услуги, ориентирани към бизнеса</h1>
+        <h1>Сфери на дейност</h1>
         <p className="mt-4 max-w-3xl text-text-muted">
-          Обслужваме клиенти в ключови индустрии — финанси, производство, технологии, социални
-          предприемачи. Вярваме в интегриран подход и ясни резултати.
+          Адвокатско дружество Горанова и Христова-Аличкова предоставя правни услуги на местни и
+          чуждестранни корпоративни организации и юридически лица с нестопанска цел.
         </p>
       </section>
 
-      <div className="grid gap-8 md:grid-cols-3">
+      <div className="grid gap-8 md:grid-cols-2">
         {services.map((service) => (
           <article
             key={service.title}
@@ -62,4 +36,3 @@ export default function ServicesPage() {
     </div>
   );
 }
-

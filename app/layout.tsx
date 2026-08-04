@@ -15,13 +15,24 @@ const inter = Inter({
 });
 
 const keywordsBg = [
-  'адвокат корпоративно право',
+  'адвокатско дружество',
+  'корпоративно право',
+  'търговско право',
   'нестопански организации',
-  'правни консултации',
+  'интелектуална собственост',
+  'обществени поръчки',
+  'Горанова и Христова-Аличкова',
   'GAPLaw',
 ];
 
-const keywordsEn = ['corporate law firm bulgaria', 'non-profit legal', 'GAPLaw'];
+const keywordsEn = [
+  'law firm bulgaria',
+  'corporate commercial law',
+  'non-profit legal',
+  'intellectual property bulgaria',
+  'Goranova Hristova Alitchkova',
+  'GAPLaw',
+];
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://gaplaw.eu'),
@@ -30,12 +41,12 @@ export const metadata: Metadata = {
     template: '%s | GAPLaw',
   },
   description:
-    'Стратегически правни решения за корпоративни клиенти и нестопански организации. Адвокатско дружество Горанова и Христова-Аличкова.',
+    'Адвокатско дружество Горанова и Христова-Аличкова е българска правна кантора, която предоставя услуги на местни и чуждестранни корпоративни организации и юридически лица с нестопанска цел.',
   keywords: [...keywordsBg, ...keywordsEn],
   openGraph: {
-    title: 'GAPLaw | Корпоративно право и нестопански организации',
+    title: 'GAPLaw | Адвокатско дружество Горанова и Христова-Аличкова',
     description:
-      'Експерти по корпоративно управление, ESG и правни услуги за нестопански организации в България.',
+      'Правна практика, основана на професионализма, тясното сътрудничество с клиента, лоялността и справедливата цена.',
     url: 'https://gaplaw.eu',
     siteName: 'GAPLaw',
     locale: 'bg_BG',
@@ -43,9 +54,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'GAPLaw | Корпоративно право',
+    title: 'GAPLaw | Адвокатско дружество Горанова и Христова-Аличкова',
     description:
-      'Партньор за юридическа сигурност и устойчив растеж на вашата организация.',
+      'Услуги за местни и чуждестранни корпоративни организации и юридически лица с нестопанска цел.',
   },
 };
 

@@ -1,27 +1,30 @@
+import { firm } from '@/lib/content';
+
 export const OrganizationSchema = () => {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'LegalService',
-    name: 'Адвокатско дружество Горанова и Христова-Аличкова',
+    name: firm.nameBg,
+    alternateName: firm.nameEn,
     url: 'https://gaplaw.eu',
-    logo: 'https://gaplaw.eu/logo.png',
+    email: firm.email,
+    telephone: firm.phone,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'ул. „Иван Вазов“ 12',
-      addressLocality: 'София',
-      postalCode: '1000',
+      streetAddress: firm.streetAddress,
+      addressLocality: firm.city,
+      postalCode: firm.postalCode,
       addressCountry: 'BG',
     },
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+35928123456',
+      telephone: firm.phone,
+      email: firm.email,
       contactType: 'customer service',
       areaServed: 'BG',
-      availableLanguage: ['Bulgarian', 'English'],
+      availableLanguage: ['Bulgarian', 'English', 'German'],
     },
-    sameAs: ['https://www.linkedin.com/company/gaplaw'],
-    description:
-      'GAPLaw предлага стратегически правни решения за корпоративни клиенти и нестопански организации.',
+    description: homeDescription(),
   };
 
   return (
@@ -32,3 +35,6 @@ export const OrganizationSchema = () => {
   );
 };
 
+function homeDescription() {
+  return 'Адвокатско дружество Горанова и Христова-Аличкова е българска правна кантора, която предоставя услуги на местни и чуждестранни корпоративни организации и юридически лица с нестопанска цел.';
+}

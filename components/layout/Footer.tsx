@@ -1,11 +1,12 @@
 import Link from 'next/link';
+import { firm } from '@/lib/content';
 
 const navLinks = [
   { href: '/', label: 'Начало' },
   { href: '/about', label: 'За нас' },
-  { href: '/services', label: 'Услуги' },
+  { href: '/services', label: 'Сфери на дейност' },
   { href: '/insights', label: 'Новини' },
-  { href: '/contact', label: 'Контакт' },
+  { href: '/contact', label: 'Контакти' },
 ];
 
 export const Footer = () => {
@@ -16,13 +17,13 @@ export const Footer = () => {
       <div className="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-14 md:flex-row md:justify-between">
         <div className="max-w-md space-y-3">
           <p className="font-semibold uppercase tracking-[0.3em] text-sm text-primary">
-            GAPLaw
+            {firm.shortName}
           </p>
-          <p className="text-lg font-semibold text-text-primary">
-            Адвокатско дружество Горанова и Христова-Аличкова
-          </p>
+          <p className="text-lg font-semibold text-text-primary">{firm.nameBg}</p>
           <p className="text-sm text-text-muted">
-            Специализирани правни услуги за корпоративни клиенти и нестопански организации в България и ЕС.
+            Адвокатско дружество Горанова и Христова-Аличкова е българска правна кантора, която
+            предоставя услуги на местни и чуждестранни корпоративни организации и юридически лица с
+            нестопанска цел.
           </p>
         </div>
 
@@ -44,18 +45,20 @@ export const Footer = () => {
 
           <div>
             <p className="text-sm font-semibold uppercase tracking-wide text-text-secondary">
-              Контакт
+              Контакти
             </p>
             <ul className="mt-4 space-y-2 text-sm text-text-muted">
-              <li>ул. „Иван Вазов“ 12, София</li>
+              {firm.addressLinesBg.map((line) => (
+                <li key={line}>{line}</li>
+              ))}
               <li>
-                <a href="tel:+35928123456" className="hover:text-primary">
-                  +359 2 812 34 56
+                <a href={`tel:${firm.phoneTel}`} className="hover:text-primary">
+                  {firm.phone}
                 </a>
               </li>
               <li>
-                <a href="mailto:office@gaplaw.eu" className="hover:text-primary">
-                  office@gaplaw.eu
+                <a href={`mailto:${firm.email}`} className="hover:text-primary">
+                  {firm.email}
                 </a>
               </li>
             </ul>
@@ -64,9 +67,8 @@ export const Footer = () => {
       </div>
 
       <div className="border-t border-white/10 bg-surface/80 py-6 text-center text-xs text-text-muted">
-        © {year} GAPLaw. Всички права запазени.
+        © {year} {firm.nameBg}. Всички права запазени.
       </div>
     </footer>
   );
 };
-

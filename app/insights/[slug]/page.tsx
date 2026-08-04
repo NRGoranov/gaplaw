@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getInsightBySlug, getInsights } from '@/lib/content';
@@ -15,18 +14,13 @@ export async function generateMetadata({ params }: InsightPageProps): Promise<Me
   const insight = getInsightBySlug(params.slug);
   if (!insight) {
     return {
-      title: 'Insight',
+      title: 'Новина',
     };
   }
 
   return {
-    title: `${insight.title}`,
+    title: insight.title,
     description: insight.excerpt,
-    openGraph: {
-      title: insight.title,
-      description: insight.excerpt,
-      images: [{ url: insight.imageUrl }],
-    },
   };
 }
 
@@ -37,7 +31,9 @@ export default function InsightPage({ params }: InsightPageProps) {
     notFound();
   }
 
-  const paragraphs = insight.content.split('\n\n');
+  const paragraphs = insight.content
+    ? insight.content.split('\n\n').filter((paragraph) => paragraph.trim().length > 0)
+    : [];
 
   return (
     <article className="mx-auto max-w-4xl space-y-8 px-6">
@@ -50,25 +46,26 @@ export default function InsightPage({ params }: InsightPageProps) {
           })}
         </p>
         <h1>{insight.title}</h1>
-        <p className="text-lg text-text-muted">{insight.excerpt}</p>
       </header>
 
-      <div className="relative h-96 overflow-hidden rounded-[2.5rem]">
-        <Image
-          src={insight.imageUrl}
-          alt={insight.imageAlt}
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, 75vw"
-        />
-      </div>
+      {paragraphs.length > 0 ? (
+        <div className="space-y-4 text-lg text-text-muted">
+          {paragraphs.map((paragraph) => (
+            <p key={paragraph.substring(0, 20)}>{paragraph}</p>
+          ))}
+        </div>
+      ) : null}
 
-      <div className="space-y-4 text-lg text-text-muted">
-        {paragraphs.map((paragraph) => (
-          <p key={paragraph.substring(0, 20)}>{paragraph}</p>
-        ))}
-      </div>
+      {insight.pdfUrl ? (
+        <a
+          href={insight.pdfUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-luxury hover:-translate-y-0.5"
+        >
+          Изтеглете PDF
+        </a>
+      ) : null}
     </article>
   );
 }
-

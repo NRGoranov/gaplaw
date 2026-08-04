@@ -7,9 +7,9 @@ import { useState } from 'react';
 const navItems = [
   { href: '/', label: 'Начало' },
   { href: '/about', label: 'За нас' },
-  { href: '/services', label: 'Услуги' },
+  { href: '/services', label: 'Сфери на дейност' },
   { href: '/insights', label: 'Новини' },
-  { href: '/contact', label: 'Контакт' },
+  { href: '/contact', label: 'Контакти' },
 ];
 
 export const FloatingHeader = () => {
