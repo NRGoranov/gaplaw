@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --font-inter: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    sans-serif;
+  --font-sans: 'Source Sans 3', 'Segoe UI', sans-serif;
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   --color-background: #f5f9fe;
   --color-background-light: #ffffff;
   --color-background-warm: #e8f1fc;
@@ -13,16 +13,16 @@
   --color-primary-dark: #2f6bb5;
   --color-primary-hover: #b5d6fc;
   --color-primary-subtle: #eaf3fe;
-  --color-accent: #b8976a;
-  --color-accent-light: #d4bc8e;
-  --color-accent-dark: #8a6f45;
-  --color-accent-subtle: #f5ecd9;
+  --color-accent: #6b4a36;
+  --color-accent-light: #8f6a52;
+  --color-accent-dark: #3f2a1e;
+  --color-accent-subtle: #f1e7df;
   --color-secondary: #3a6ba8;
   --color-secondary-light: #5b8fc8;
   --color-secondary-dark: #1e4474;
-  --color-text-primary: #0f1c2e;
-  --color-text-secondary: #2a4570;
-  --color-text-muted: #5a6f8a;
+  --color-text-primary: #14110f;
+  --color-text-secondary: #3d2e28;
+  --color-text-muted: #4f453f;
   --color-text-light: #f7fbff;
   --color-surface: #ffffff;
   --color-surface-elevated: #f0f6fd;
@@ -31,8 +31,8 @@
   --color-warning: #d4963c;
   --color-error: #ba4a4a;
   --gradient-trust: linear-gradient(135deg, #CBE2FE, #2f6bb5);
-  --gradient-luxury: linear-gradient(120deg, #1e4474, #b8976a);
-  --gradient-soft: linear-gradient(135deg, #f0f6fd, #f5ecd9);
+  --gradient-luxury: linear-gradient(120deg, #3f2a1e, #6b4a36);
+  --gradient-soft: linear-gradient(135deg, #f0f6fd, #f1e7df);
   --gradient-breathe: linear-gradient(120deg, #CBE2FE, #f5f9fe);
 }
 
@@ -49,7 +49,7 @@ html {
 body {
   background-color: var(--color-background);
   color: var(--color-text-primary);
-  font-family: var(--font-inter);
+  font-family: var(--font-sans);
   min-height: 100vh;
 }
 
@@ -114,26 +114,28 @@ body::selection {
 h1,
 h2,
 h3 {
+  font-family: var(--font-display);
   font-weight: 600;
+  letter-spacing: -0.01em;
   color: var(--color-text-primary);
 }
 
 h1 {
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  line-height: 1.1;
+  font-size: clamp(2.15rem, 4.4vw, 3.65rem);
+  line-height: 1.12;
 }
 
 h2 {
-  font-size: clamp(1.75rem, 3vw, 2.75rem);
+  font-size: clamp(1.85rem, 3.2vw, 2.85rem);
   line-height: 1.2;
 }
 
 h3 {
-  font-size: clamp(1.35rem, 2vw, 2rem);
+  font-size: clamp(1.4rem, 2.1vw, 2.05rem);
 }
 
 p {
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .view-transition-fallback {

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Cormorant_Garamond, Source_Sans_3 } from 'next/font/google';
 import './globals.css';
 import { FloatingHeader } from '@/components/layout/FloatingHeader';
 import { Footer } from '@/components/layout/Footer';
@@ -8,9 +8,16 @@ import { ViewTransitions } from '@/components/layout/ViewTransitions';
 import { PaletteProvider } from '@/components/providers/PaletteProvider';
 import { OrganizationSchema } from '@/components/SEO/OrganizationSchema';
 
-const inter = Inter({
+const sourceSans = Source_Sans_3({
   subsets: ['latin', 'cyrillic'],
-  variable: '--font-inter',
+  variable: '--font-sans',
+  display: 'swap',
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin', 'cyrillic'],
+  weight: ['500', '600', '700'],
+  variable: '--font-display',
   display: 'swap',
 });
 
@@ -61,8 +68,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="bg" className={inter.variable} suppressHydrationWarning>
-      <body className="bg-background text-text-primary antialiased">
+    <html
+      lang="bg"
+      className={`${sourceSans.variable} ${cormorant.variable}`}
+      suppressHydrationWarning
+    >
+      <body className="bg-background font-sans text-text-primary antialiased">
         <PaletteProvider>
           <ViewTransitions />
           <OrganizationSchema />

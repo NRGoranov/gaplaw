@@ -27,7 +27,7 @@ export const FloatingHeader = () => {
     <header className="fixed inset-x-0 top-0 z-40 h-20 bg-transparent">
       <div className="mx-auto flex h-full w-full max-w-6xl items-center justify-between rounded-full border border-white/10 bg-surface/80 px-6 shadow-glow backdrop-blur-md transition">
         <Link href="/" className="flex flex-col">
-          <span className="font-semibold uppercase tracking-[0.35em] text-sm text-accent">
+          <span className="font-display text-base font-semibold uppercase tracking-[0.28em] text-accent">
             GAPLaw
           </span>
           <span className="text-xs text-text-muted">Адвокатско дружество</span>

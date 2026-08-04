@@ -16,7 +16,7 @@ export const Footer = () => {
     <footer className="mt-20 border-t border-white/10 bg-surface-warm/90">
       <div className="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-14 md:flex-row md:justify-between">
         <div className="max-w-md space-y-3">
-          <p className="font-semibold uppercase tracking-[0.3em] text-sm text-accent">
+          <p className="font-display text-base font-semibold uppercase tracking-[0.28em] text-accent">
             {firm.shortName}
           </p>
           <p className="text-lg font-semibold text-text-primary">{firm.nameBg}</p>

@@ -58,7 +58,8 @@ const config: Config = {
         error: 'var(--color-error)',
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-sans)', 'Source Sans 3', 'Segoe UI', 'sans-serif'],
+        display: ['var(--font-display)', 'Cormorant Garamond', 'Georgia', 'serif'],
       },
       fontSize: {
         'display-lg': ['3rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
