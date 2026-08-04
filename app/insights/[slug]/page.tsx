@@ -61,7 +61,7 @@ export default function InsightPage({ params }: InsightPageProps) {
           href={insight.pdfUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-luxury hover:-translate-y-0.5"
+          className="inline-flex rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-dark shadow-luxury hover:-translate-y-0.5"
         >
           Изтеглете PDF
         </a>

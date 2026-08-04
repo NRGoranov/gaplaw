@@ -35,7 +35,7 @@ export const Footer = () => {
             <ul className="mt-4 space-y-2 text-sm text-text-muted">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="transition hover:text-primary">
+                  <Link href={link.href} className="transition hover:text-primary-dark">
                     {link.label}
                   </Link>
                 </li>
@@ -52,12 +52,12 @@ export const Footer = () => {
                 <li key={line}>{line}</li>
               ))}
               <li>
-                <a href={`tel:${firm.phoneTel}`} className="hover:text-primary">
+                <a href={`tel:${firm.phoneTel}`} className="hover:text-primary-dark">
                   {firm.phone}
                 </a>
               </li>
               <li>
-                <a href={`mailto:${firm.email}`} className="hover:text-primary">
+                <a href={`mailto:${firm.email}`} className="hover:text-primary-dark">
                   {firm.email}
                 </a>
               </li>

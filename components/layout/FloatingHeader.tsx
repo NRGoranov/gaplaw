@@ -40,7 +40,7 @@ export const FloatingHeader = () => {
               href={item.href}
               className={`transition ${
                 isActive(item.href)
-                  ? 'text-primary'
+                  ? 'text-primary-dark'
                   : 'text-text-muted hover:text-text-primary'
               }`}
             >
@@ -52,7 +52,7 @@ export const FloatingHeader = () => {
         <div className="hidden items-center lg:flex">
           <Link
             href="/contact"
-            className="rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-luxury transition hover:-translate-y-0.5 hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-dark"
+            className="rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-dark shadow-luxury transition hover:-translate-y-0.5 hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-dark"
           >
             Свържете се с нас
           </Link>
@@ -106,7 +106,7 @@ export const FloatingHeader = () => {
         <div className="mt-6">
           <Link
             href="/contact"
-            className="block rounded-full bg-primary px-4 py-3 text-center text-sm font-semibold text-white shadow-luxury transition hover:-translate-y-0.5 hover:bg-primary-hover"
+            className="block rounded-full bg-primary px-4 py-3 text-center text-sm font-semibold text-primary-dark shadow-luxury transition hover:-translate-y-0.5 hover:bg-primary-hover"
           >
             Насрочете консултация
           </Link>

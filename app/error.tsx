@@ -27,7 +27,7 @@ export default function ErrorPage({
           <button
             type="button"
             onClick={reset}
-            className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-luxury"
+            className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-dark shadow-luxury"
           >
             Опресни страницата
           </button>

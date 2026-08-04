@@ -23,13 +23,13 @@ export default function Home() {
           <div className="flex flex-wrap gap-4">
             <Link
               href="/contact"
-              className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-luxury transition hover:-translate-y-1 hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-dark"
+              className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-dark shadow-luxury transition hover:-translate-y-1 hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-dark"
             >
               Свържете се с нас
             </Link>
             <Link
               href="/services"
-              className="rounded-full border border-text-secondary/20 px-6 py-3 text-sm font-semibold text-text-secondary transition hover:border-primary hover:text-primary"
+              className="rounded-full border border-text-secondary/20 px-6 py-3 text-sm font-semibold text-text-secondary transition hover:border-primary-dark hover:text-primary-dark"
             >
               Сфери на дейност
             </Link>
@@ -47,7 +47,7 @@ export default function Home() {
               нестопанска цел.
             </p>
           </div>
-          <Link href="/services" className="text-sm font-semibold text-primary">
+          <Link href="/services" className="text-sm font-semibold text-primary-dark">
             Всички сфери →
           </Link>
         </div>
@@ -71,7 +71,7 @@ export default function Home() {
           </p>
           <Link
             href="/about"
-            className="mt-6 inline-flex items-center text-sm font-semibold text-primary hover:text-primary-dark"
+            className="mt-6 inline-flex items-center text-sm font-semibold text-primary-dark hover:text-primary-dark"
           >
             Научете повече за нас →
           </Link>
@@ -81,12 +81,12 @@ export default function Home() {
           <h2>Свържете се с нас</h2>
           <ul className="mt-6 space-y-3 text-text-muted">
             <li>
-              <a href={`tel:${firm.phoneTel}`} className="hover:text-primary">
+              <a href={`tel:${firm.phoneTel}`} className="hover:text-primary-dark">
                 Tel: {firm.phone}
               </a>
             </li>
             <li>
-              <a href={`mailto:${firm.email}`} className="hover:text-primary">
+              <a href={`mailto:${firm.email}`} className="hover:text-primary-dark">
                 {firm.email}
               </a>
             </li>
@@ -96,7 +96,7 @@ export default function Home() {
           </ul>
           <Link
             href="/contact"
-            className="mt-6 inline-flex rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-luxury hover:-translate-y-0.5"
+            className="mt-6 inline-flex rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-dark shadow-luxury hover:-translate-y-0.5"
           >
             Към контакти
           </Link>
@@ -109,7 +109,7 @@ export default function Home() {
             <p className="text-sm uppercase tracking-wide text-accent-dark">Новини</p>
             <h2>Новини</h2>
           </div>
-          <Link href="/insights" className="text-sm font-semibold text-primary hover:text-primary-dark">
+          <Link href="/insights" className="text-sm font-semibold text-primary-dark hover:text-primary-dark">
             Всички новини →
           </Link>
         </div>

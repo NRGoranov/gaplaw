@@ -39,7 +39,7 @@ export const TeamMember = ({
         {email ? (
           <a
             href={`mailto:${email}`}
-            className="mt-2 inline-block text-sm text-primary hover:text-primary-dark"
+            className="mt-2 inline-block text-sm text-primary-dark hover:text-secondary-dark"
           >
             {email}
           </a>

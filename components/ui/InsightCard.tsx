@@ -22,7 +22,7 @@ export const InsightCard = ({ insight }: InsightCardProps) => (
       <div className="mt-auto flex flex-col gap-2">
         <Link
           href={`/insights/${insight.slug}`}
-          className="text-sm font-semibold text-primary transition hover:text-primary-dark"
+          className="text-sm font-semibold text-primary-dark transition hover:text-secondary-dark"
         >
           Повече информация →
         </Link>
@@ -31,7 +31,7 @@ export const InsightCard = ({ insight }: InsightCardProps) => (
             href={insight.pdfUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-semibold text-text-secondary transition hover:text-primary"
+            className="text-sm font-semibold text-text-secondary transition hover:text-primary-dark"
           >
             Изтеглете PDF →
           </a>

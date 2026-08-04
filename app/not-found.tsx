@@ -10,7 +10,7 @@ export default function NotFound() {
         началото или разгледайте сфери на дейност.
       </p>
       <div className="flex gap-4">
-        <Link href="/" className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-luxury">
+        <Link href="/" className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-dark shadow-luxury">
           Начало
         </Link>
         <Link

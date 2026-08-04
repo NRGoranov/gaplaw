@@ -114,7 +114,7 @@ export const ContactForm = () => {
 
       <button
         type="submit"
-        className="flex w-full items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-luxury transition hover:-translate-y-0.5 hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-dark disabled:cursor-not-allowed disabled:opacity-70"
+        className="flex w-full items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-dark shadow-luxury transition hover:-translate-y-0.5 hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-dark disabled:cursor-not-allowed disabled:opacity-70"
         disabled={isSubmitting}
       >
         {isSubmitting ? <LoadingSpinner /> : 'Изпратете запитване'}

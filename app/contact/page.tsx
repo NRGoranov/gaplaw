@@ -18,7 +18,7 @@ export default function ContactPage() {
             <p className="text-xs uppercase tracking-wide text-text-secondary">Телефон</p>
             <a
               href={`tel:${firm.phoneTel}`}
-              className="text-lg font-semibold text-text-primary hover:text-primary"
+              className="text-lg font-semibold text-text-primary hover:text-primary-dark"
             >
               {firm.phone}
             </a>
@@ -27,7 +27,7 @@ export default function ContactPage() {
             <p className="text-xs uppercase tracking-wide text-text-secondary">Имейл</p>
             <a
               href={`mailto:${firm.email}`}
-              className="text-lg font-semibold text-text-primary hover:text-primary"
+              className="text-lg font-semibold text-text-primary hover:text-primary-dark"
             >
               {firm.email}
             </a>
@@ -52,13 +52,13 @@ export default function ContactPage() {
             ))}
             <p className="text-lg text-text-muted">
               mail:{' '}
-              <a href={`mailto:${firm.email}`} className="hover:text-primary">
+              <a href={`mailto:${firm.email}`} className="hover:text-primary-dark">
                 {firm.email}
               </a>
             </p>
             <p className="pt-2 text-text-muted">
               Tel:{' '}
-              <a href={`tel:${firm.phoneTel}`} className="hover:text-primary">
+              <a href={`tel:${firm.phoneTel}`} className="hover:text-primary-dark">
                 {firm.phone}
               </a>
             </p>
@@ -71,7 +71,7 @@ export default function ContactPage() {
                 <p className="text-sm text-text-muted">{member.role}</p>
                 <a
                   href={`mailto:${member.email}`}
-                  className="text-sm text-primary hover:text-primary-dark"
+                  className="text-sm text-primary-dark hover:text-secondary-dark-dark"
                 >
                   {member.email}
                 </a>

@@ -66,9 +66,9 @@ const config: Config = {
         'display-sm': ['2rem', { lineHeight: '1.2' }],
       },
       boxShadow: {
-      luxury: '0 20px 45px -25px rgb(23 154 125 / 0.45)',
-        'luxury-lg': '0 30px 60px -35px rgb(23 154 125 / 0.5)',
-        glow: '0 0 60px rgb(184 151 106 / 0.12)',
+      luxury: '0 20px 45px -25px rgb(47 107 181 / 0.35)',
+        'luxury-lg': '0 30px 60px -35px rgb(47 107 181 / 0.4)',
+        glow: '0 0 60px rgb(203 226 254 / 0.45)',
       },
       borderRadius: {
         xl: '1rem',
