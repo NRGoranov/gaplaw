@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { ContactForm } from '@/components/ui/ContactForm';
 import { firm, team } from '@/lib/content';
 
 export const metadata: Metadata = {
@@ -42,26 +41,33 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <div className="grid gap-8 lg:grid-cols-2">
-        <ContactForm />
-        <div className="space-y-6 rounded-3xl border border-white/10 bg-surface-warm p-8 shadow-glow">
-          <h2>Адрес</h2>
-          {firm.addressLinesBg.map((line) => (
-            <p key={line} className="text-text-muted">
-              {line}
+      <section className="rounded-3xl border border-white/10 bg-surface-warm p-8 shadow-glow md:p-12">
+        <div className="grid gap-10 md:grid-cols-2 md:gap-16">
+          <div className="space-y-4">
+            <h2>Адрес</h2>
+            {firm.addressLinesBg.map((line) => (
+              <p key={line} className="text-lg text-text-muted">
+                {line}
+              </p>
+            ))}
+            <p className="text-lg text-text-muted">
+              mail:{' '}
+              <a href={`mailto:${firm.email}`} className="hover:text-primary">
+                {firm.email}
+              </a>
             </p>
-          ))}
-          <p className="text-text-muted">
-            mail:{' '}
-            <a href={`mailto:${firm.email}`} className="hover:text-primary">
-              {firm.email}
-            </a>
-          </p>
+            <p className="pt-2 text-text-muted">
+              Tel:{' '}
+              <a href={`tel:${firm.phoneTel}`} className="hover:text-primary">
+                {firm.phone}
+              </a>
+            </p>
+          </div>
 
-          <div className="space-y-6 pt-4">
+          <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2">
             {team.map((member) => (
-              <div key={member.email}>
-                <p className="font-semibold text-text-primary">{member.name}</p>
+              <div key={member.email} className="space-y-1">
+                <p className="text-lg font-semibold text-text-primary">{member.name}</p>
                 <p className="text-sm text-text-muted">{member.role}</p>
                 <a
                   href={`mailto:${member.email}`}
@@ -73,7 +79,7 @@ export default function ContactPage() {
             ))}
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }
