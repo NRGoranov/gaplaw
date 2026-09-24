@@ -49,6 +49,11 @@ export const metadata: Metadata = {
   description:
     'Адвокатско дружество Горанова и Христова-Аличкова е българска правна кантора, която предоставя бутикови правни решения за вашия бизнес.',
   keywords: [...keywordsBg, ...keywordsEn],
+  icons: {
+    icon: [{ url: '/logo_temp.png', type: 'image/png' }],
+    apple: [{ url: '/logo_temp.png', type: 'image/png' }],
+    shortcut: '/logo_temp.png',
+  },
   openGraph: {
     title: 'GAPLaw | Адвокатско дружество Горанова и Христова-Аличкова',
     description:
@@ -57,12 +62,21 @@ export const metadata: Metadata = {
     siteName: 'GAPLaw',
     locale: 'bg_BG',
     type: 'website',
+    images: [
+      {
+        url: '/logo_temp.png',
+        width: 1200,
+        height: 630,
+        alt: 'GAPLaw — Адвокатско дружество Горанова и Христова-Аличкова',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'GAPLaw | Адвокатско дружество Горанова и Христова-Аличкова',
     description:
       'Услуги за местни и чуждестранни корпоративни организации и юридически лица с нестопанска цел.',
+    images: ['/logo_temp.png'],
   },
 };
 

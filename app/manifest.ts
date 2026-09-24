@@ -2,20 +2,25 @@ import type { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'GAPLaw Website',
+    name: 'GAPLaw | Адвокатско дружество Горанова и Христова-Аличкова',
     short_name: 'GAPLaw',
     start_url: '/',
     display: 'standalone',
-    background_color: '#ffffff',
-    theme_color: '#599b3b',
+    background_color: '#f5f9fe',
+    theme_color: '#CBE2FE',
     lang: 'bg',
     icons: [
       {
-        src: '/favicon.ico',
-        sizes: '48x48',
-        type: 'image/x-icon',
+        src: '/logo_temp.png',
+        sizes: 'any',
+        type: 'image/png',
+        purpose: 'any',
+      },
+      {
+        src: '/favicon.png',
+        sizes: 'any',
+        type: 'image/png',
       },
     ],
   };
 }
-

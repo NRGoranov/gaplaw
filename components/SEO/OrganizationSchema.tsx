@@ -7,6 +7,7 @@ export const OrganizationSchema = () => {
     name: firm.nameBg,
     alternateName: firm.nameEn,
     url: 'https://gaplaw.eu',
+    logo: 'https://gaplaw.eu/logo_temp.png',
     email: firm.email,
     telephone: firm.phone,
     address: {
