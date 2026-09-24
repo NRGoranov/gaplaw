@@ -1,16 +1,24 @@
 import Link from 'next/link';
-import { firm } from '@/lib/content';
+import { firm, getAddressLines, getFirmName, getFooterBlurb } from '@/lib/content';
+import type { Locale } from '@/lib/i18n';
+import { getUi, localizePath } from '@/lib/i18n';
 
-const navLinks = [
-  { href: '/', label: 'Начало' },
-  { href: '/about', label: 'За нас' },
-  { href: '/services', label: 'Сфери на дейност' },
-  { href: '/insights', label: 'Новини' },
-  { href: '/contact', label: 'Контакти' },
-];
+interface FooterProps {
+  locale: Locale;
+}
 
-export const Footer = () => {
+export const Footer = ({ locale }: FooterProps) => {
   const year = new Date().getFullYear();
+  const t = getUi(locale);
+  const name = getFirmName(locale);
+
+  const navLinks = [
+    { href: localizePath(locale, '/'), label: t.home },
+    { href: localizePath(locale, '/about'), label: t.about },
+    { href: localizePath(locale, '/services'), label: t.services },
+    { href: localizePath(locale, '/insights'), label: t.news },
+    { href: localizePath(locale, '/contact'), label: t.contact },
+  ];
 
   return (
     <footer className="mt-20 border-t border-white/10 bg-surface-warm/90">
@@ -19,18 +27,14 @@ export const Footer = () => {
           <p className="font-display text-base font-semibold uppercase tracking-[0.28em] text-accent">
             {firm.shortName}
           </p>
-          <p className="text-lg font-semibold text-text-primary">{firm.nameBg}</p>
-          <p className="text-sm text-text-muted">
-            Адвокатско дружество Горанова и Христова-Аличкова е българска правна кантора, която
-            предоставя услуги на местни и чуждестранни корпоративни организации и юридически лица с
-            нестопанска цел.
-          </p>
+          <p className="text-lg font-semibold text-text-primary">{name}</p>
+          <p className="text-sm text-text-muted">{getFooterBlurb(locale)}</p>
         </div>
 
         <div className="grid flex-1 gap-10 sm:grid-cols-2 md:max-w-lg">
           <div>
             <p className="text-sm font-semibold uppercase tracking-wide text-text-secondary">
-              Навигация
+              {t.navigation}
             </p>
             <ul className="mt-4 space-y-2 text-sm text-text-muted">
               {navLinks.map((link) => (
@@ -45,10 +49,10 @@ export const Footer = () => {
 
           <div>
             <p className="text-sm font-semibold uppercase tracking-wide text-text-secondary">
-              Контакти
+              {t.contact}
             </p>
             <ul className="mt-4 space-y-2 text-sm text-text-muted">
-              {firm.addressLinesBg.map((line) => (
+              {getAddressLines(locale).map((line) => (
                 <li key={line}>{line}</li>
               ))}
               <li>
@@ -66,8 +70,23 @@ export const Footer = () => {
         </div>
       </div>
 
-      <div className="border-t border-white/10 bg-surface/80 py-6 text-center text-xs text-text-muted">
-        © {year} {firm.nameBg}. Всички права запазени.
+      <div className="border-t border-white/10 bg-surface/80 py-6">
+        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 text-xs text-text-muted sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            {t.createdBy}{' '}
+            <a
+              href="https://nrgtrw.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-text-secondary/80 transition hover:text-accent-dark"
+            >
+              NRG
+            </a>
+          </p>
+          <p className="sm:text-right">
+            © {year} {name}. {t.allRights}
+          </p>
+        </div>
       </div>
     </footer>
   );

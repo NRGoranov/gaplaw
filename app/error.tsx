@@ -32,7 +32,7 @@ export default function ErrorPage({
             Опресни страницата
           </button>
           <Link
-            href="/"
+            href="/bg"
             className="rounded-full border border-text-secondary/30 px-6 py-3 text-sm font-semibold text-text-secondary"
           >
             Начало

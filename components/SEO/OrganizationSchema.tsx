@@ -4,16 +4,16 @@ export const OrganizationSchema = () => {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'LegalService',
-    name: firm.nameBg,
-    alternateName: firm.nameEn,
+    name: firm.names.bg,
+    alternateName: firm.names.en,
     url: 'https://gaplaw.eu',
     logo: 'https://gaplaw.eu/logo_temp.png',
     email: firm.email,
     telephone: firm.phone,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: firm.streetAddress,
-      addressLocality: firm.city,
+      streetAddress: firm.streetAddress.bg,
+      addressLocality: firm.city.bg,
       postalCode: firm.postalCode,
       addressCountry: 'BG',
     },
@@ -25,7 +25,7 @@ export const OrganizationSchema = () => {
       areaServed: 'BG',
       availableLanguage: ['Bulgarian', 'English', 'German'],
     },
-    description: homeDescription(),
+    description: firm.footerBlurb.bg,
   };
 
   return (
@@ -35,7 +35,3 @@ export const OrganizationSchema = () => {
     />
   );
 };
-
-function homeDescription() {
-  return 'Адвокатско дружество Горанова и Христова-Аличкова е българска правна кантора, която предоставя бутикови правни решения за вашия бизнес.';
-}

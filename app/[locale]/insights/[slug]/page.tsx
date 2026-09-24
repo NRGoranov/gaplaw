@@ -1,21 +1,22 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getInsightBySlug, getInsights } from '@/lib/content';
+import { getUi, isLocale, locales, type Locale } from '@/lib/i18n';
 
 interface InsightPageProps {
-  params: { slug: string };
+  params: { locale: string; slug: string };
 }
 
 export async function generateStaticParams() {
-  return getInsights().map((insight) => ({ slug: insight.slug }));
+  return locales.flatMap((locale) =>
+    getInsights().map((insight) => ({ locale, slug: insight.slug })),
+  );
 }
 
 export async function generateMetadata({ params }: InsightPageProps): Promise<Metadata> {
   const insight = getInsightBySlug(params.slug);
   if (!insight) {
-    return {
-      title: 'Новина',
-    };
+    return { title: isLocale(params.locale) ? getUi(params.locale).news : 'News' };
   }
 
   return {
@@ -25,6 +26,9 @@ export async function generateMetadata({ params }: InsightPageProps): Promise<Me
 }
 
 export default function InsightPage({ params }: InsightPageProps) {
+  if (!isLocale(params.locale)) notFound();
+  const locale = params.locale as Locale;
+  const t = getUi(locale);
   const insight = getInsightBySlug(params.slug);
 
   if (!insight) {
@@ -34,12 +38,13 @@ export default function InsightPage({ params }: InsightPageProps) {
   const paragraphs = insight.content
     ? insight.content.split('\n\n').filter((paragraph) => paragraph.trim().length > 0)
     : [];
+  const dateLocale = locale === 'en' ? 'en-GB' : 'bg-BG';
 
   return (
     <article className="mx-auto max-w-4xl space-y-8 px-6">
       <header className="space-y-4">
         <p className="text-sm uppercase tracking-wide text-text-secondary">
-          {new Date(insight.date).toLocaleDateString('bg-BG', {
+          {new Date(insight.date).toLocaleDateString(dateLocale, {
             day: '2-digit',
             month: 'long',
             year: 'numeric',
@@ -63,7 +68,7 @@ export default function InsightPage({ params }: InsightPageProps) {
           rel="noopener noreferrer"
           className="inline-flex rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-dark shadow-luxury hover:-translate-y-0.5"
         >
-          Изтеглете PDF
+          {t.downloadPdf}
         </a>
       ) : null}
     </article>
